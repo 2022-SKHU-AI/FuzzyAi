@@ -17,15 +17,15 @@ rankTable = ['인턴', '사원', '주임', '대리', '계장', '과장', '차장
 
 if __name__ == "__main__":
     try:
-        #speaker = int(input("하는 사람의 나이 입력: "))
-        speaker = 30
-        #listener = int(input("듣는 사람의 나이 입력: "))
-        listener = 60
-        #rank = input("직급 입력(과장, 부장 등..): ")
-        rank = "부장"
+        speaker = int(input("하는 사람의 나이 입력: "))
+        #speaker = 30
+        listener = int(input("듣는 사람의 나이 입력: "))
+        #listener = 60
+        rank = input("직급 입력(과장, 부장 등..): ")
+        #rank = "부장"
         rankValue = rankTable.index(rank)
-        #look = list(input("표정 입력(분노 경멸 혐오 행복의 형태로 입력.\n입력 예시 : 0.05 0.03 0.02 0.55): ").split())
-        look = "0.05 0.03 0.02 0.55".split()
+        look = list(input("표정 입력(분노 경멸 혐오 행복의 형태로 입력.\n입력 예시 : 0.05 0.03 0.02 0.55): ").split())
+        #look = "0.05 0.03 0.02 0.55".split()
         lookValue = -(float(look[0])+float(look[1])+float(look[2]))+float(look[3])
     except Exception as e:
         print(e)
@@ -63,7 +63,9 @@ if __name__ == "__main__":
         if i[0] > fuzzySet[i[1]]:
             fuzzySet[i[1]] = i[0]
 
-    print(fuzzySet)
+    # 퍼지 값 출력
+    #print(fuzzySet)
+
     #step 4
     plt.ylim([0.0, 1.0])  # 그래프 y 범위를 0~1로 정함
     sum = 0 # 그래프의 넓이(분자)
@@ -82,11 +84,13 @@ if __name__ == "__main__":
         y.append(temp[3] if fuzzySet[3] > temp[3] else fuzzySet[3])
         y.append(temp[4] if fuzzySet[4] > temp[4] else fuzzySet[4])
 
-        plt.scatter(x, max(y), c='red', s=5)
 
-        for i in temp:
-            if i != 0:
-                plt.scatter(x, i, c='black', s=1)
+        # 그래프 그리는 부분
+        #plt.scatter(x, max(y), c='red', s=5)
+
+        #for i in temp:
+            #if i != 0:
+                #plt.scatter(x, i, c='black', s=1)
 
 
 
@@ -101,11 +105,9 @@ if __name__ == "__main__":
         # 근데 그럼 시간이 오래걸림
         sum += max(y) * x
 
-        denominator += max(y)# 분모에 가로 길이를 더하는거 아님??
+        denominator += max(y)# 소속값의 총 합
 
 
-    #denominator = 100  # 분모에 가로 길이를 더하는거 아님??
-
-    plt.show() # 그래프 표시
+    #plt.show() # 그래프 표시
 
     print("당신의 아재력은", round(sum/denominator, 2), "%")
