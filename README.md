@@ -1,17 +1,17 @@
 # FuzzyAi
 
-## 아재개그 판독기
-### 당신의 아재력은 얼마인가?
+### 아재개그 판독기
+#### 당신의 아재력은 얼마인가?
 
 
-# 실행방법
+## 실행방법
 ```
 git clone https://github.com/2022-SKHU-AI/FuzzyAi
 cd FuzzyAi
 python3 fuzzy.py
 ```
 
-# 입력값 예시
+## 입력값 예시
 하는 사람의 나이 입력: _30_
 듣는 사람의 나이 입력: _60_
 직급 입력(과장, 부장 등..): _부장_
@@ -20,6 +20,6 @@ python3 fuzzy.py
 
 출력값 : 50%
 
-# 사용 라이브러리
+## 사용 라이브러리
 Matplotlib
 Numpy
