@@ -1,6 +1,6 @@
 from function.Gaussian import Gaussian
 
-
+# 감정 소속함수
 class Feeling:
     def __init__(self):
         self.passive = Gaussian(-1, 3.3)

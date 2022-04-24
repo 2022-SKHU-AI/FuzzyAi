@@ -1,6 +1,6 @@
 from function.TrapeZoid import TrapeZoid
 
-
+# 직급 소속함수
 class Rank:
     def __init__(self):
         self.low = TrapeZoid(-100, 0, 6, 9)

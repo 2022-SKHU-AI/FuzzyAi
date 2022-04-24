@@ -1,5 +1,6 @@
 import numpy as np
 
+# 가우시안 형태 소속함수
 class Gaussian:
     def __init__(self, c, sigma):
         self.c = c

@@ -1,6 +1,6 @@
 from function.TrapeZoid import TrapeZoid
 
-
+# 하는 사람, 듣는 사람 나이 소속함수
 class Age:
     def __init__(self):
         self.young = TrapeZoid(-100, 0, 20, 40)
